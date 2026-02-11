@@ -1,20 +1,42 @@
+// src/App.jsx
 import React from "react";
-import SideBar from "./Component/sideBar/SideBar";
-import About from "./Component/About/About";
-import TechStack from "./Component/TechStack/TechStack";
-import Project from "./Component/projects/Project";
-import Workxperience from "./Component/WorkExperience/Workxperience";
-import Education from "./Component/Education/Education";
-import Contact from "./Component/contact/Contact";
-import NavbarMobuleView from "./Component/sideBar/NavbarMobuleView";
+import { useMediaQuery } from "@mui/material";
 
-export const App = () => {
+import NavbarMobileView from "./Component/sideBar/NavbarMobileView";
+import SideBar from "./Component/sideBar/SideBar";
+
+import Home from "./Component/Home/Home";
+import About from "./Component/About/About";
+import WorkExperience from "./Component/WorkExperience/WorkExperience";
+import TechStack from "./Component/TechStack/TechStack";
+import Education from "./Component/Education/Education";
+import Project from "./Component/projects/Project";
+import Contact from "./Component/contact/Contact";
+
+const App = () => {
+  const isDesktop = useMediaQuery("(min-width:900px)");
+
+  if (isDesktop) {
+    return (
+      <SideBar>
+        <Home />
+        <About />
+        <WorkExperience />
+        <TechStack />
+        <Education />
+        <Project />
+        <Contact />
+      </SideBar>
+    );
+  }
+
+  // Mobile: top navbar + stacked sections
   return (
     <>
-      <NavbarMobuleView />
-      <SideBar />
+      <NavbarMobileView />
+      <Home />
       <About />
-      <Workxperience />
+      <WorkExperience />
       <TechStack />
       <Education />
       <Project />

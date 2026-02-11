@@ -1,34 +1,71 @@
+// src/Component/sideBar/SideBar.jsx
 import React, { useState } from "react";
-import "./SideBar.css";
-import Home from "../Home/Home";
-
+import { Box, IconButton } from "@mui/material";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 import SideBarList from "./SideBarList";
 
-export const SideBar = () => {
-  const [expandSidebar, setExpandSidebar] = useState(false);
+const SIDEBAR_WIDTH_COLLAPSED = 72;
+const SIDEBAR_WIDTH_EXPANDED = 230;
 
-  const handleExpandClick = () => {
-    setExpandSidebar(!expandSidebar);
-  };
+const SideBar = ({ children }) => {
+  const [expanded, setExpanded] = useState(true);
+  const width = expanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED;
+
   return (
-    <div className="container-fluid sidebar-section">
-      <div className={expandSidebar ? "sidebar-expand sidebar" : "sidebar"}>
-        <div className="icon-for-sidebar-expand-and-collapse">
-          <p onClick={handleExpandClick}>
-            {expandSidebar ? (
-              <BsChevronLeft size={30} />
+    <Box sx={{ display: "flex", minHeight: "100vh" }}>
+      {/* Fixed sidebar */}
+      <Box
+        component="nav"
+        sx={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          bottom: 0,
+          width,
+          bgcolor: "#12232e",
+          color: "common.white",
+          display: "flex",
+          flexDirection: "column",
+          pt: 1,
+          boxShadow: 3,
+          zIndex: 1200,
+        }}
+      >
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: expanded ? "flex-end" : "center",
+            px: 1,
+          }}
+        >
+          <IconButton
+            size="small"
+            onClick={() => setExpanded((prev) => !prev)}
+            sx={{ color: "common.white" }}
+            aria-label={expanded ? "Collapse sidebar" : "Expand sidebar"}
+          >
+            {expanded ? (
+              <BsChevronLeft size={20} />
             ) : (
-              <BsChevronRight size={30} />
+              <BsChevronRight size={20} />
             )}
-          </p>
-        </div>
-        <SideBarList expandSidebar={expandSidebar} />
-      </div>
-      <div className="container">
-        <Home />
-      </div>
-    </div>
+          </IconButton>
+        </Box>
+
+        <SideBarList expandSidebar={expanded} />
+      </Box>
+
+      {/* Main content shifted to the right */}
+      <Box
+        component="main"
+        sx={{
+          ml: `${width}px`,
+          width: "100%",
+        }}
+      >
+        {children}
+      </Box>
+    </Box>
   );
 };
 
