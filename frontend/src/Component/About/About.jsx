@@ -60,9 +60,10 @@ const About = () => {
             paragraph
             sx={{ color: "#ccc", lineHeight: 1.8, textAlign: "justify" }}
           >
-            Hello! I'm <b>Ashraff Adams</b>, a Full-Stack Software Developer
-            specializing in building modern, scalable, and business-focused web
-            applications using React, Node.js, Express, and MongoDB.
+            Hello! I'm <b>Adams Ashraff Abubakar</b>, a Full-Stack Software
+            Developer specializing in building modern, scalable, and
+            business-focused web applications using React, Node.js, Express, and
+            MongoDB.
           </Typography>
 
           <Typography
@@ -97,6 +98,13 @@ const About = () => {
             on writing clean, maintainable, and scalable code. My goal is to
             help businesses grow by providing software solutions that are fast,
             secure, and built for long-term success.
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ color: "#ccc", lineHeight: 1.8, textAlign: "justify" }}
+          >
+            I am also a proficient computer engineer with eight years
+            experience.
           </Typography>
         </Grid>
       </Grid>
