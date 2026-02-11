@@ -38,7 +38,7 @@ const Home = () => {
           >
             Hi, I’m{" "}
             <Box component="span" sx={{ color: "#00b894" }}>
-              Ashraff Adams
+              Adams Ashraff Abubakar
             </Box>
           </Typography>
 
