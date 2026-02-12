@@ -1,3 +1,4 @@
+// src/Component/WorkExperience/WorkExperience.jsx
 import React from "react";
 import { Box, Typography, Chip, Stack } from "@mui/material";
 import {
@@ -9,70 +10,90 @@ import { MdGroupWork } from "react-icons/md";
 
 const workExperienceData = [
   {
-    companyName: "Joint Admissions And Matriculation Board",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2021 – Present",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    title: "Hospital Management System",
+    role: "Full Stack Developer",
+    year: "2023 – Present",
+    description:
+      "Designed and developed a hospital management platform with pharmacy and accounting modules, role-based access control, and operational workflows for doctors, pharmacists, and admin staff.",
+    techSkills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "REST API",
+      "Role‑based Auth",
+    ],
   },
   {
-    companyName: "Diamond Cafe",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2020 – 2021",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    title: "Pure Water Factory Platform",
+    role: "Full Stack Developer",
+    year: "2022 – 2023",
+    description:
+      "Built a factory website and management system with customer ordering, payment integration, delivery tracking, admin dashboard, and sales analytics to support business operations.",
+    techSkills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "JWT Auth",
+      "Payment Integration",
+      "Admin Dashboard",
+    ],
   },
   {
-    companyName: "SS Computers",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2013 – 2015",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    title: "JAMB Mail App – Automated Email Notification System",
+    role: "Full Stack Developer",
+    year: "2025",
+    description:
+      "Developed an automated, dynamic email sending application for JAMB to deliver personalized notifications to thousands of users. The system uses reusable templates with placeholders, merges candidate data, and sends bulk emails securely and efficiently.",
+    techSkills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Nodemailer",
+      "Email Templates",
+      "Bulk Email Automation",
+    ],
   },
   {
-    companyName: "YouTube",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2013 – 2014",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    title: "Voice‑to‑Text Web Application",
+    role: "Full Stack Developer",
+    year: "2021 – 2022",
+    description:
+      "Implemented a web application using Whisper for converting recorded audio into text with speaker identification, editable transcripts, and export to PDF, DOCX, and TXT formats.",
+    techSkills: [
+      "React.js",
+      "Node.js",
+      "Whisper AI",
+      "File Processing",
+      "REST API",
+    ],
   },
   {
-    companyName: "Facebook",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2013 – 2014",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
-  },
-  {
-    companyName: "Instagram",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2013 – 2014",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
-  },
-  {
-    companyName: "WhatsApp",
-    position: "Full Stack Developer",
-    description: "A job portal built using MERN stack.",
-    year: "2013 – 2014",
-    techSkills: ["Node.js", "Express.js", "React.js", "MongoDB"],
+    title: "Admin Panels & Analytics Dashboards",
+    role: "Full Stack Developer",
+    year: "Ongoing",
+    description:
+      "Developed admin panels and analytics dashboards with real‑time metrics, role‑based management, reporting views, and MongoDB aggregation for tracking users, orders, and revenue.",
+    techSkills: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB Aggregation",
+      "Chart.js / Recharts",
+      "Role‑based Management",
+    ],
   },
 ];
 
 const colors = [
   "#F44336",
-  "#FFC0CB",
-  "#A52A2A",
-  "#F0E68C",
-  "#8B4513",
   "#4169E1",
   "#7FFF00",
   "#FF6347",
   "#8A2BE2",
-  "#DCDCDC",
-  "#00CED1",
   "#FFD700",
-  "#9400D3",
 ];
 
 const WorkExperience = () => {
@@ -87,14 +108,13 @@ const WorkExperience = () => {
         color: "common.white",
       }}
     >
-      {/* Section title */}
       <Box textAlign="center" mb={4}>
         <Typography
           variant="h4"
           component="h2"
           sx={{ color: "#00b894", fontWeight: "bold", mb: 1 }}
         >
-          Work Experience
+          Work & Project Experience
         </Typography>
         <Box
           sx={{
@@ -107,14 +127,13 @@ const WorkExperience = () => {
         />
       </Box>
 
-      {/* Timeline */}
       <VerticalTimeline lineColor="#ff1042">
         {workExperienceData.map((item, index) => {
           const color = colors[index % colors.length];
 
           return (
             <VerticalTimelineElement
-              key={`${item.companyName}-${item.year}`}
+              key={`${item.title}-${item.year}`}
               className="vertical-timeline-element--work"
               contentStyle={{ background: color, color: "#fff" }}
               contentArrowStyle={{ borderRight: `7px solid ${color}` }}
@@ -127,11 +146,11 @@ const WorkExperience = () => {
                 component="h3"
                 sx={{ fontWeight: 600, mb: 0.5 }}
               >
-                {item.companyName}
+                {item.title}
               </Typography>
 
               <Typography variant="subtitle2" sx={{ mb: 1, fontWeight: 500 }}>
-                {item.position}
+                {item.role}
               </Typography>
 
               <Stack
@@ -139,7 +158,7 @@ const WorkExperience = () => {
                 flexWrap="wrap"
                 gap={1}
                 sx={{ mb: 1.5 }}
-                aria-label="Tech skills"
+                aria-label="Tech stack"
               >
                 {item.techSkills.map((tech) => (
                   <Chip

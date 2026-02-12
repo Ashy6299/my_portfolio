@@ -8,7 +8,7 @@ import {
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import profilepic from "../../Images/a.jpeg";
+import profilepic from "../../Images/a.png";
 import {
   FcHome,
   FcContacts,

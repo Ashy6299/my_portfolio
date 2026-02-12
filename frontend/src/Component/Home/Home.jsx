@@ -59,6 +59,7 @@ const Home = () => {
                   "React & Node.js Specialist",
                   "Web Application Engineer",
                   "UI/UX Focused Developer",
+                  "Computer and Network Engineer",
                 ],
                 autoStart: true,
                 loop: true,

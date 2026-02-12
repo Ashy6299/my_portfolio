@@ -14,7 +14,7 @@ import {
 } from "@mui/material";
 import { RiSendPlaneFill } from "react-icons/ri";
 import emailjs from "emailjs-com";
-import image from "../../Images/a.jpeg";
+import image from "../../Images/a.png";
 
 // You can use env vars (recommended)
 // Create a .env file with:
