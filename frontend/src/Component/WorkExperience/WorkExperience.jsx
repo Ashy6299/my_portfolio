@@ -90,7 +90,7 @@ const workExperienceData = [
 const colors = [
   "#F44336",
   "#4169E1",
-  "#7FFF00",
+  "#77b13c",
   "#FF6347",
   "#8A2BE2",
   "#FFD700",
