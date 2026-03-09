@@ -13,7 +13,7 @@ import {
   Avatar,
 } from "@mui/material";
 import { RiSendPlaneFill } from "react-icons/ri";
-import emailjs from "emailjs-com";
+import emailjs from "@emailjs/browser";
 import image from "../../Images/a.png";
 
 // You can use env vars (recommended)
