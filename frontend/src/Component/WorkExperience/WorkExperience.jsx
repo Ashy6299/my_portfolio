@@ -93,7 +93,7 @@ const colors = [
   "#77b13c",
   "#FF6347",
   "#8A2BE2",
-  "#FFD700",
+  "#d79f06",
 ];
 
 const WorkExperience = () => {
